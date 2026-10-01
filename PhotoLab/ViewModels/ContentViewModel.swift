@@ -6,10 +6,10 @@ import CoreImage.CIFilterBuiltins
 @Observable
 class ContentViewModel {
     var processedImage: Image?
-    var filterIntensity: Double = 0.5 { didSet { reprocess() } }
-    var currentFilterOption: FilterOption = .sepiaTone { didSet { reprocess() } }
+    var filterIntensity: Double = 0.5 { didSet { Task { await reprocess() } } }
+    var currentFilterOption: FilterOption = .sepiaTone { didSet { Task { await reprocess() } } }
     var selectedItem: PhotosPickerItem? { didSet { Task { await loadImage() } } }
-    var rotationQuarterTurns: Int = 0 { didSet { reprocess() } }
+    var rotationQuarterTurns: Int = 0 { didSet { Task { await reprocess() } } }
 
     private var filterUsageCount: Int {
         get { UserDefaults.standard.integer(forKey: "filterUsageCount") }
