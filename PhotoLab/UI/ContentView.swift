@@ -64,7 +64,7 @@ struct ContentView: View {
                         }
                         Spacer()
                         if let processedImage = viewModel.processedImage {
-                            ShareLink(item: processedImage, preview: SharePreview("Instafilter image", image: processedImage))
+                            ShareLink(item: processedImage, preview: SharePreview("PhotoLab image", image: processedImage))
                         }
                     }
                 }
@@ -72,7 +72,7 @@ struct ContentView: View {
 
             }
             .padding([.horizontal, .bottom])
-            .navigationTitle("Instafilter")
+            .navigationTitle("PhotoLab")
 
         }
     }

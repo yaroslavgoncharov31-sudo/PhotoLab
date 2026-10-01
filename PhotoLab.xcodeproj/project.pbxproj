@@ -6,8 +6,13 @@
 	objectVersion = 90;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C4B10929306EAC2800B40278 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C4B10928306EAC2800B40278 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* PhotoLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4B10928306EAC2800B40278 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -30,6 +35,7 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
+				C4B10928306EAC2800B40278 /* .gitignore */,
 				000000000000000000000010 /* PhotoLab */,
 				000000000000000000000020 /* Products */,
 			);
@@ -102,6 +108,7 @@
 		000000000000000140000000 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
+				C4B10929306EAC2800B40278 /* .gitignore in Resources */,
 			);
 		};
 /* End PBXResourcesBuildPhase section */

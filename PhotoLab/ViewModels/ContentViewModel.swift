@@ -22,6 +22,7 @@ class ContentViewModel {
     private var beginImage: CIImage?
     private let imageProcessor = ImageProcessor()
     private var processingTask: Task<Void, Never>?
+    private var reprocessTask: Task<Void, Never>?
     let availableFilters = FilterOption.allCases
 
     func rotateClockwise() { rotationQuarterTurns -= 1 }
@@ -35,13 +36,15 @@ class ContentViewModel {
     private func loadImage() async {
         beginImage = try? await imageProcessor.loadImage(item: selectedItem)
         rotationQuarterTurns = 0
-        reprocess()
+        await reprocess()
     }
 
-    private func reprocess() {
+    private func reprocess() async {
         processingTask?.cancel()
+        reprocessTask?.cancel()
         guard let beginImage else { return }
 
+        try? await Task.sleep(for: .milliseconds(150))
         let option = currentFilterOption
         let intensity = filterIntensity
         let rotation = rotationQuarterTurns
